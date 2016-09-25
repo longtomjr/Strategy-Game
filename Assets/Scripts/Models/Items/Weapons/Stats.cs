@@ -58,9 +58,10 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="avoidChance">The avoid chance.</param>
         /// <param name="minimumRange">The minimum range.</param>
         /// <param name="maximumRange">The maximum range.</param>
+        /// <param name="amountHits">The amount of hits.</param>
         /// <param name="maximumUses">The maximum uses.</param>
         /// <param name="currentUses">The current uses.</param>
-        public Stats(int might, int? hitChance, int? critChance, int avoidChance, int minimumRange, int maximumRange, int? maximumUses = null, int? currentUses = null)
+        public Stats(int might, int? hitChance, int? critChance, int avoidChance, int minimumRange, int maximumRange, int amountHits = 1, int? maximumUses = null, int? currentUses = null)
         {
             this.Might = might;
             this.HitChance = hitChance;
@@ -68,6 +69,7 @@ namespace Assets.Scripts.Models.Items.Weapons
             this.AvoidChance = avoidChance;
             this.MinimumRange = minimumRange;
             this.MaximumRange = maximumRange;
+            this.AmountHits = amountHits;
             this.MaximumUses = maximumUses;
             this.CurrentUses = currentUses;
         }
@@ -219,5 +221,10 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// Gets or sets the maximum range of the weapon.
         /// </summary>
         public int MaximumRange { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amount of hits of the weapon. Default is 1.
+        /// </summary>
+        public int AmountHits { get; set; }
     }
 }
