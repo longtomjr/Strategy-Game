@@ -1,21 +1,21 @@
 ﻿#region LICENSE
 
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="WorldControler.cs" company="SpaceKrakens">
+// <copyright file="WorldController.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
 
-namespace StrategyGame.Controlers
-{
-    using UnityEngine;
+using UnityEngine;
 
+namespace StrategyGame.Controllers
+{
     /// <summary>
     /// The controller for everything in the world.
     /// </summary>
-    public class WorldControler : MonoBehaviour
+    public class WorldController : MonoBehaviour
     {
         /// <summary>
         /// Runs when the game starts.
