@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Dormanil" file="Tile.cs">
+// <copyright company="SpaceKrakens" file="Tile.cs">
 //   MIT License
-//   Copyright (c) 2016 Dormanil
+//   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // <summary>
 //   Defines a Tile.
@@ -10,73 +10,86 @@
 
 namespace StrategyGame.World
 {
-    using StrategyGame.Interfaces;
+    using System;
+
+    using StrategyGame.Characters;
+
+    /// <summary>
+    /// The enterability of a tile.
+    /// </summary>
+    public enum Enterability
+    {
+        /// <summary>
+        /// This tile can be entered by anyone.
+        /// </summary>
+        Yes,
+
+        /// <summary>
+        /// This tile is impassable for anyone.
+        /// </summary>
+        No,
+
+        /// <summary>
+        /// This tile needs more information to determine its enterability for a unit.
+        /// </summary>
+        Maybe
+    }
 
     /// <summary>
     /// Defines a Tile.
     /// </summary>
-    public class Tile : ISelectable
+    public class Tile
     {
         /// <summary>
-        /// The selection info.
+        /// The occupying unit.
         /// </summary>
-        private readonly ISelectable selectionInfo;
+        private Unit occupyingUnit;
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Tile"/> class.
+        /// Gets the tile type.
         /// </summary>
-        /// <param name="name">
-        /// The name.
-        /// </param>
-        /// <param name="description">
-        /// The description.
-        /// </param>
-        public Tile(string name, string description)
-        {
-            this.selectionInfo = new SelectionInfo(name, description);
-        }
+        public string TileType { get; private set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets the positive or negative impact standing on this tile at the end of the turn has on the unit's health.
         /// </summary>
-        public string Name
+        public int HealthImpact { get; private set; }
+
+        /// <summary>
+        /// Gets the positive or negative impact standing on this tile while defending or attacking has on the unit's evasion.
+        /// </summary>
+        public int EvadeImpact { get; private set; }
+
+        /// <summary>
+        /// Gets the function to determine the movement penalty.
+        /// </summary>
+        public Func<Unit, int> MovementPenalty { get; private set; }
+
+        /// <summary>
+        /// Gets the enterability. If <see cref="Enterability.Yes"/>, anyone can enter this tile. If <see cref="Enterability.No"/>, the tile is impassable for anyone. If <see cref="Enterability.Maybe"/>, a function should be called to determine final enterability.
+        /// </summary>
+        public Enterability Enterability { get; private set; }
+
+        /// <summary>
+        /// Gets the function to determine <see cref="Enterability"/>, should this tile's Enterability be <see cref="Enterability.Maybe"/>.
+        /// </summary>
+        public Func<Unit, Enterability> IsEnterable { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the occupying unit.
+        /// </summary>
+        public Unit OccupyingUnit
         {
             get
             {
-                return this.selectionInfo.Name;
+                return this.occupyingUnit;
             }
 
             set
             {
-                this.selectionInfo.Name = value;
+                this.occupyingUnit = value;
+                value.CurrentTile = this;
             }
-        }
-
-        /// <summary>
-        /// Gets or sets the description.
-        /// </summary>
-        public string Description
-        {
-            get
-            {
-                return this.selectionInfo.Description;
-            }
-
-            set
-            {
-                this.selectionInfo.Description = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets the selection information.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="ISelectable"/>.
-        /// </returns>
-        public ISelectable Select()
-        {
-            return this.selectionInfo.Select();
         }
     }
 }

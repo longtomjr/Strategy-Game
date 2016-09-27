@@ -15,6 +15,8 @@ namespace StrategyGame.Characters
     using StrategyGame.Characters.Classes;
     using StrategyGame.Interfaces;
     using StrategyGame.Items;
+    using StrategyGame.Scenarios;
+    using StrategyGame.World;
 
     /// <summary>
     /// Defines a Unit.
@@ -88,6 +90,16 @@ namespace StrategyGame.Characters
         /// Gets the stats.
         /// </summary>
         public Stats.Stats Stats { get; }
+
+        /// <summary>
+        /// Gets or sets the current tile.
+        /// </summary>
+        public Tile CurrentTile { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current faction.
+        /// </summary>
+        public Faction CurrentFaction { get; set; }
 
         /// <summary>
         /// Gets the inventory.
