@@ -85,7 +85,7 @@ namespace StrategyGame.Items.Weapons
         /// <summary>
         /// Gets the name.
         /// </summary>
-        public virtual string Name => this.NameIsDefault ? this.Material.ToString() + " " + this.WeaponType.ToString() : this.UniqueName;
+        public override string Name => this.NameIsDefault ? this.Material.ToString() + " " + this.WeaponType.ToString() : this.UniqueName;
 
         /// <summary>
         /// Gets a value indicating whether name is default.

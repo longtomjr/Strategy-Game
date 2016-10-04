@@ -1,25 +1,25 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Classes.cs" company="SpaceKrakens">
+// <copyright file="Units.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // <summary>
-//   Defines the Classes type.
+//   Defines the Units type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace StrategyGame.Characters.Classes
+namespace StrategyGame.Characters
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// Static container class for all classes available at runtime.
+    /// The units.
     /// </summary>
-    public static class Classes
+    public static class Units
     {
         /// <summary>
-        /// Gets the class dictionary, containing all classes that should be available at runtime.
+        /// Gets the unit dictionary, containing all units that should be available at runtime.
         /// </summary>
-        public static Dictionary<string, Class> ClassDictionary { get; } = new Dictionary<string, Class>();
+        public static List<Unit> UnitDictionary { get; } = new List<Unit>();
     }
 }

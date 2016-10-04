@@ -38,5 +38,10 @@ namespace StrategyGame.Items.Weapons
             : base(weaponType, material, stats, requiredWeaponRank, true, weaponTriangleIsDefault, nameIsDefault, uniqueName)
         {
         }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        public override string Name => this.NameIsDefault ? this.Material.ToString() + this.WeaponType.ToString().ToLower() : this.UniqueName;
     }
 }

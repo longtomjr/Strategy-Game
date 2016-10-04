@@ -1,25 +1,25 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Classes.cs" company="SpaceKrakens">
+// <copyright file="Items.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // <summary>
-//   Defines the Classes type.
+//   Defines the Items type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace StrategyGame.Characters.Classes
+namespace StrategyGame.Items
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// Static container class for all classes available at runtime.
+    /// The items.
     /// </summary>
-    public static class Classes
+    public static class Items
     {
         /// <summary>
-        /// Gets the class dictionary, containing all classes that should be available at runtime.
+        /// Gets the item dictionary, containing all items that should be available at runtime.
         /// </summary>
-        public static Dictionary<string, Class> ClassDictionary { get; } = new Dictionary<string, Class>();
+        public static Dictionary<string, Item> ItemDictionary { get; } = new Dictionary<string, Item>();
     }
 }

@@ -13,6 +13,7 @@ namespace StrategyGame.Characters.Classes
     using System.Collections.Generic;
 
     using StrategyGame.Characters.Stats;
+    using StrategyGame.Items.Ranks;
 
     /// <summary>
     /// Defines the Class type.
@@ -50,8 +51,9 @@ namespace StrategyGame.Characters.Classes
         /// <param name="isBaseClass">Indicates base class or not.</param>
         /// <param name="isSpecialClass">Indicates special class or not.</param>
         /// <param name="secondTierClasses">The list of second tier classes.</param>
-        public Class(int baseHealth, int maxBaseHealth, int baseStrength, int maxBaseStrength, int baseMagic, int maxBaseMagic, int baseSkill, int maxBaseSkill, int baseSpeed, int maxBaseSpeed, int baseLuck, int maxBaseLuck, int baseDefence, int maxBaseDefence, int baseResistance, int maxBaseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses)
-            : this(new Health(baseHealth, maxBaseHealth, baseHealthGrowth), new Strength(baseStrength, maxBaseStrength, baseStrengthGrowth), new Magic(baseMagic, maxBaseMagic, baseMagicGrowth), new Skill(baseSkill, maxBaseSkill, baseSkillGrowth), new Speed(baseSpeed, maxBaseSpeed, baseSpeedGrowth), new Luck(baseLuck, maxBaseLuck, baseLuckGrowth), new Defence(baseDefence, maxBaseDefence, baseDefenceGrowth), new Resistance(baseResistance, maxBaseResistance, baseResistanceGrowth), new Movement(baseMoveRange), isBaseClass, isSpecialClass, secondTierClasses)
+        /// <param name="ranks">Maximum and minimum weapon ranks.</param>
+        public Class(int baseHealth, int maxBaseHealth, int baseStrength, int maxBaseStrength, int baseMagic, int maxBaseMagic, int baseSkill, int maxBaseSkill, int baseSpeed, int maxBaseSpeed, int baseLuck, int maxBaseLuck, int baseDefence, int maxBaseDefence, int baseResistance, int maxBaseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses, List<Rank>[] ranks)
+            : this(new Health(baseHealth, maxBaseHealth, baseHealthGrowth), new Strength(baseStrength, maxBaseStrength, baseStrengthGrowth), new Magic(baseMagic, maxBaseMagic, baseMagicGrowth), new Skill(baseSkill, maxBaseSkill, baseSkillGrowth), new Speed(baseSpeed, maxBaseSpeed, baseSpeedGrowth), new Luck(baseLuck, maxBaseLuck, baseLuckGrowth), new Defence(baseDefence, maxBaseDefence, baseDefenceGrowth), new Resistance(baseResistance, maxBaseResistance, baseResistanceGrowth), new Movement(baseMoveRange), isBaseClass, isSpecialClass, secondTierClasses, ranks)
         {
         }
 
@@ -70,7 +72,8 @@ namespace StrategyGame.Characters.Classes
         /// <param name="isBaseClass">Indicates base class or not.</param>
         /// <param name="isSpecialClass">Indicates special class or not.</param>
         /// <param name="secondTierClasses">The list of second tier classes.</param>
-        public Class(Health baseHealth, Strength baseStrength, Magic baseMagic, Skill baseSkill, Speed baseSpeed, Luck baseLuck, Defence baseDefence, Resistance baseResistance, Movement baseMoveRange, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses)
+        /// <param name="ranks">Maximum and minimum weapon ranks.</param>
+        public Class(Health baseHealth, Strength baseStrength, Magic baseMagic, Skill baseSkill, Speed baseSpeed, Luck baseLuck, Defence baseDefence, Resistance baseResistance, Movement baseMoveRange, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses, List<Rank>[] ranks)
         {
             this.BaseHealth = baseHealth;
             this.BaseStrength = baseStrength;
@@ -84,6 +87,7 @@ namespace StrategyGame.Characters.Classes
             this.IsBaseClass = isBaseClass;
             this.IsSpecialClass = isSpecialClass;
             this.SecondTierClasses = secondTierClasses;
+            this.Ranks = ranks;
         }
 
         /// <summary>
@@ -153,5 +157,10 @@ namespace StrategyGame.Characters.Classes
         /// Gets the list of second tier classes.
         /// </summary>
         public List<Class> SecondTierClasses { get; }
+
+        /// <summary>
+        /// Gets the ranks.
+        /// </summary>
+        public List<Rank>[] Ranks { get; }
     }
 }

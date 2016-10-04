@@ -17,11 +17,13 @@ namespace StrategyGame.Controllers
     /// </summary>
     public class WorldController : MonoBehaviour
     {
+
         /// <summary>
         /// Runs when the game starts.
         /// </summary>
         public void Start()
         {
+            InitialiseGameState();
         }
 
         /// <summary>
@@ -29,6 +31,16 @@ namespace StrategyGame.Controllers
         /// </summary>
         public void Update()
         {
+        }
+
+        private static void InitialiseGameState()
+        {
+            ////InitialiseClasses();
+            ////InitialiseItems();
+            ////InitialiseUnits();
+            ////InitialiseMap();
+
+            Debug.TestNumberOne.InitialiseGameState();
         }
     }
 }

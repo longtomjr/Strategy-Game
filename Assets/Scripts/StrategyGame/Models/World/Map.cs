@@ -1,7 +1,7 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Map.cs" company="Dormanil">
+// <copyright file="Map.cs" company="SpaceKrakens">
 //   MIT License
-//   Copyright (c) 2016 Dormanil
+//   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // <summary>
 //   Defines a Map made of Tiles.
