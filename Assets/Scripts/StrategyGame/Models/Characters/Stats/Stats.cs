@@ -75,7 +75,7 @@ namespace StrategyGame.Characters.Stats
             Level level,
             Health health,
             Defence defence,
-            List<Rank> weaponRanks)
+            List<Rank>[] weaponRanks)
         {
             this.Strength = strength;
             this.Speed = speed;
@@ -142,7 +142,7 @@ namespace StrategyGame.Characters.Stats
             int currRes,
             int maxRes,
             int currMov,
-            List<Rank> weaponRanks,
+            List<Rank>[] weaponRanks,
             int bonusHp = 0,
             int bonusStr = 0,
             int bonusMag = 0,
@@ -300,7 +300,7 @@ namespace StrategyGame.Characters.Stats
         /// <summary>
         /// Gets the weapon ranks.
         /// </summary>
-        public List<Rank> WeaponRanks { get; }
+        public List<Rank>[] WeaponRanks { get; }
 
         /// <summary>
         /// Registers that weapon as being equipped.

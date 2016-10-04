@@ -57,10 +57,17 @@ namespace StrategyGame.Debug
                     resistance: new Resistance(current: 1, maximum: -1, growthRate: 0.2f),
                     movement: new Movement(current: 0),
                     level: new Level(current: 1, maximum: 20),
-                    weaponRanks: new List<Rank>()));
-            character.Stats.WeaponRanks.AddRange(Classes.ClassDictionary["Lord"].Ranks[0]);
-            character.Stats.WeaponRanks[0].Experience = 33;
-            character.Stats.WeaponRanks[0].Level = 1;
+                    weaponRanks: new List<Rank>[]
+                                     {
+                                         new List<Rank>(Classes.ClassDictionary["Lord"].Ranks[0]), 
+                                         new List<Rank>(Classes.ClassDictionary["Lord"].Ranks[0]),
+                                         new List<Rank>(Classes.ClassDictionary["Lord"].Ranks[1]),  
+                                     }));
+            character.Stats.WeaponRanks[1][0].Experience = 33;
+            character.Stats.WeaponRanks[1][0].Level = 1;
+            character.Inventory.EquipItem(Items.ItemDictionary["Training Sword"]);
+            character.Stats.RegisterWeapon((Weapon)Items.ItemDictionary["Training Sword"]);
+            Unit.ApplyClass(character, character.Class);
 
             Units.UnitDictionary.Add(character);
         }
