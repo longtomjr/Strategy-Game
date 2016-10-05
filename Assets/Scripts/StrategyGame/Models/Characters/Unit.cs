@@ -85,7 +85,7 @@ namespace StrategyGame.Characters
         /// <summary>
         /// Gets the class.
         /// </summary>
-        public Class Class { get; private set; }
+        public Class Class { get; internal set; }
 
         /// <summary>
         /// Gets the stats.

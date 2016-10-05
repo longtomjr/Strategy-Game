@@ -18,9 +18,23 @@ namespace StrategyGame.Scenarios
     public class Faction
     {
         /// <summary>
-        /// Gets or sets the faction id.
+        /// The id counter.
         /// </summary>
-        public int FactionId { get; set; }
+        private static int idCounter = 0;
+
+        /// <summary>
+        /// Initialises a new instance of the <see cref="Faction"/> class.
+        /// </summary>
+        public Faction()
+        {
+            this.FactionId = idCounter++;
+            Factions.AllFactions.Add(this.FactionId, this);
+        }
+
+        /// <summary>
+        /// Gets the faction id.
+        /// </summary>
+        public int FactionId { get; }
 
         /// <summary>
         /// Gets or sets the allied factions.

@@ -48,32 +48,32 @@ namespace StrategyGame.World
         /// <summary>
         /// Gets the tile type.
         /// </summary>
-        public string TileType { get; private set; }
+        public string TileType { get; internal set; }
 
         /// <summary>
         /// Gets the positive or negative impact standing on this tile at the end of the turn has on the unit's health.
         /// </summary>
-        public int HealthImpact { get; private set; }
+        public int HealthImpact { get; internal set; }
 
         /// <summary>
         /// Gets the positive or negative impact standing on this tile while defending or attacking has on the unit's evasion.
         /// </summary>
-        public int EvadeImpact { get; private set; }
+        public int EvadeImpact { get; internal set; }
 
         /// <summary>
         /// Gets the function to determine the movement penalty.
         /// </summary>
-        public Func<Unit, int> MovementPenalty { get; private set; }
+        public Func<Unit, int> MovementPenalty { get; internal set; }
 
         /// <summary>
         /// Gets the enterability. If <see cref="Enterability.Yes"/>, anyone can enter this tile. If <see cref="Enterability.No"/>, the tile is impassable for anyone. If <see cref="Enterability.Maybe"/>, a function should be called to determine final enterability.
         /// </summary>
-        public Enterability Enterability { get; private set; }
+        public Enterability Enterability { get; internal set; }
 
         /// <summary>
         /// Gets the function to determine <see cref="Enterability"/>, should this tile's Enterability be <see cref="Enterability.Maybe"/>.
         /// </summary>
-        public Func<Unit, Enterability> IsEnterable { get; private set; }
+        public Func<Unit, Enterability> IsEnterable { get; internal set; }
 
         /// <summary>
         /// Gets or sets the occupying unit.

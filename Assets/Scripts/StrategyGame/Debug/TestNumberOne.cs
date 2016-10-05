@@ -19,8 +19,10 @@ namespace StrategyGame.Debug
     using StrategyGame.Items.Ranks;
     using StrategyGame.Items.Weapons;
     using StrategyGame.Items.Weapons.Materials;
+    using StrategyGame.Scenarios;
+    using StrategyGame.World;
 
-    using Magic = StrategyGame.Characters.Stats.Magic;
+    using Magic = Characters.Stats.Magic;
 
     /// <summary>
     /// Test class number one. To initialise everything without actually using SKON.
@@ -31,13 +33,313 @@ namespace StrategyGame.Debug
         {
             InitialiseClasses();
             InitialiseItems();
+            InitialiseFactions();
             InitialiseUnits();
             InitialiseMap();
         }
 
+        private static void InitialiseFactions()
+        {
+            Faction ally01 = new Faction();
+            Faction enemy01 = new Faction();
+            ally01.EnemyFactions.Add(enemy01.FactionId);
+            enemy01.EnemyFactions.Add(ally01.FactionId);
+        }
+
         private static void InitialiseMap()
         {
-            throw new System.NotImplementedException();
+            Unit enemyUnitDefault = new Unit(
+                name: "Rey", 
+                description: "An aspiring fighter, and the childhood friend of Titan.", 
+                @class: Classes.ClassDictionary["Fighter"], 
+                stats: new StrategyGame.Characters.Stats.Stats(
+                    health: new Health(current: 2, maximum: 0, growthRate: 0.45f), 
+                    strength: new Strength(current: 2, maximum: 3, growthRate: 0.5f), 
+                    magic: new Magic(current: 0, maximum: 0, growthRate: 0.1f), 
+                    skill: new Skill(current: 1, maximum: 0, growthRate: 0.3f),
+                    speed: new Speed(current: 1, maximum: 1, growthRate: 0.25f),
+                    luck: new Luck(current: 4, maximum: 1, growthRate: 0.65f), 
+                    defence: new Defence(current: 1, maximum: 0, growthRate: 0.4f), 
+                    resistance: new Resistance(current: 1, maximum: -1, growthRate: 0.2f),
+                    movement: new Movement(current: 0), 
+                    level: new Level(current: 1, maximum: 20), 
+                    weaponRanks: new List<Rank>[]
+                                     {
+                                         new List<Rank>(Classes.ClassDictionary["Fighter"].Ranks[0]),
+                                         new List<Rank>(Classes.ClassDictionary["Fighter"].Ranks[0]),
+                                         new List<Rank>(Classes.ClassDictionary["Fighter"].Ranks[1]),
+                                     }))
+                                        {
+                                            CurrentFaction = Factions.AllFactions[1]
+                                        };
+
+            enemyUnitDefault.Stats.WeaponRanks[1][0].Experience = 69;
+            enemyUnitDefault.Stats.WeaponRanks[1][0].Level = 1;
+            enemyUnitDefault.Inventory.EquipItem(Items.ItemDictionary["Training Axe"]);
+            enemyUnitDefault.Stats.RegisterWeapon((Weapon)Items.ItemDictionary["Training Axe"]);
+            Unit.ApplyClass(enemyUnitDefault, enemyUnitDefault.Class);
+
+            Map testMap = new Map
+            {
+                Tiles = new[,]
+                            {
+                                    {
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            }
+                                    },
+                                    {
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            }
+                                    },
+                                    {
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            }
+                                    },
+                                    {
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            }
+                                    },
+                                    {
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            },
+                                        new Tile
+                                            {
+                                                Enterability = Enterability.Yes,
+                                                EvadeImpact = 0,
+                                                HealthImpact = 0,
+                                                IsEnterable = (unit) => Enterability.Yes,
+                                                MovementPenalty = (unit) => 0,
+                                                TileType = "Dirt"
+                                            }
+                                    }
+                            },
+                Scenarios = new Dictionary<Difficulty, Scenario>()
+                                {
+                                        {
+                                            Difficulty.Default, new Scenario()
+                                                                    {
+                                                                        OtherUnits = new List<Unit>()
+                                                                                         {
+                                                                                             enemyUnitDefault
+                                                                                         },
+                                                                        AllySpotCoordinates = new List<Coordinate>()
+                                                                                                  {
+                                                                                                      new Coordinate()
+                                                                                                          {
+                                                                                                              X = 3,
+                                                                                                              Y = 1
+                                                                                                          }
+                                                                                                  }
+                                                                    }
+                                        }
+                                }
+            };
         }
 
         private static void InitialiseUnits()
@@ -63,10 +365,11 @@ namespace StrategyGame.Debug
                                          new List<Rank>(Classes.ClassDictionary["Lord"].Ranks[0]),
                                          new List<Rank>(Classes.ClassDictionary["Lord"].Ranks[1]),  
                                      }));
-            character.Stats.WeaponRanks[1][0].Experience = 33;
+            character.Stats.WeaponRanks[1][0].Experience = 69;
             character.Stats.WeaponRanks[1][0].Level = 1;
             character.Inventory.EquipItem(Items.ItemDictionary["Training Sword"]);
             character.Stats.RegisterWeapon((Weapon)Items.ItemDictionary["Training Sword"]);
+            character.CurrentFaction = Factions.AllFactions[0];
             Unit.ApplyClass(character, character.Class);
 
             Units.UnitDictionary.Add(character);
