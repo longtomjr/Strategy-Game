@@ -1,4 +1,4 @@
-﻿#region LICENSE
+#region LICENSE
 
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Weapon.cs" company="SpaceKrakens">

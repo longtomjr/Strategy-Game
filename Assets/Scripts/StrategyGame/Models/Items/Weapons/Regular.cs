@@ -1,4 +1,4 @@
-﻿#region LICENSE
+#region LICENSE
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Regular.cs" company="SpaceKrakens">
 //   MIT License

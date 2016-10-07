@@ -1,4 +1,4 @@
-﻿#region LICENSE
+#region LICENSE
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="MagicMaterial.cs" company="SpaceKrakens">
 //   MIT License

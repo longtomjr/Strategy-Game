@@ -1,4 +1,4 @@
-﻿#region LICENSE
+#region LICENSE
 
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="WorldController.cs" company="SpaceKrakens">
