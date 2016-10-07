@@ -39,11 +39,11 @@ namespace StrategyGame.Scenarios
         /// <summary>
         /// Gets or sets the allied factions.
         /// </summary>
-        public List<int> AlliedFactions { get; set; }
+        public List<int> AlliedFactions { get; set; } = new List<int>();
 
         /// <summary>
         /// Gets or sets the enemy factions.
         /// </summary>
-        public List<int> EnemyFactions { get; set; }
+        public List<int> EnemyFactions { get; set; } = new List<int>();
     }
 }

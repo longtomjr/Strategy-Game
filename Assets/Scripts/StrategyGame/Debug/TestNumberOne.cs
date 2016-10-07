@@ -29,13 +29,13 @@ namespace StrategyGame.Debug
     /// </summary>
     public static class TestNumberOne
     {
-        public static void InitialiseGameState()
+        public static Map InitialiseGameState()
         {
             InitialiseClasses();
             InitialiseItems();
             InitialiseFactions();
             InitialiseUnits();
-            InitialiseMap();
+            return InitialiseMap();
         }
 
         private static void InitialiseFactions()
@@ -46,7 +46,7 @@ namespace StrategyGame.Debug
             enemy01.EnemyFactions.Add(ally01.FactionId);
         }
 
-        private static void InitialiseMap()
+        private static Map InitialiseMap()
         {
             Unit enemyUnitDefault = new Unit(
                 name: "Rey", 
@@ -340,6 +340,8 @@ namespace StrategyGame.Debug
                                         }
                                 }
             };
+
+            return testMap;
         }
 
         private static void InitialiseUnits()

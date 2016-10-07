@@ -60,5 +60,37 @@ namespace StrategyGame.Characters.Stats
         {
             return stat.Current + stat.Bonus;
         }
+
+        /// <summary>
+        /// Adds the amount of i to the Stat.
+        /// </summary>
+        /// <param name="stat">The stat.</param>
+        /// <param name="i">An integer value.</param>
+        /// <returns>The stat itself.</returns>
+        public static Stat operator +(Stat stat, int i)
+        {
+            if (stat.Current + i <= stat.Maximum)
+            {
+                stat.Current += i;
+            }
+
+            return stat;
+        }
+
+        /// <summary>
+        /// Subtracts the amount of i from the Stat.
+        /// </summary>
+        /// <param name="stat">The stat.</param>
+        /// <param name="i">An integer value.</param>
+        /// <returns>The stat itself.</returns>
+        public static Stat operator -(Stat stat, int i)
+        {
+            if (stat.Current - i >= 0)
+            {
+                stat.Current -= i;
+            }
+
+            return stat;
+        }
     }
 }
