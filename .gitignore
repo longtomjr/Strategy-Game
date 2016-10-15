@@ -33,3 +33,6 @@ sysinfo.txt
 
 # Gitignore for CSharp60Support
 *.log
+
+# Unity Version File
+/ProjectSettings/ProjectVersion.txt
