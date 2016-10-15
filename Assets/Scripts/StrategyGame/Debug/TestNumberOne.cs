@@ -324,9 +324,16 @@ namespace StrategyGame.Debug
                                         {
                                             Difficulty.Default, new Scenario()
                                                                     {
-                                                                        OtherUnits = new List<Unit>()
+                                                                        OtherUnits = new Dictionary<Coordinate, Unit>()
                                                                                          {
-                                                                                             enemyUnitDefault
+                                                                                                 {
+                                                                                                     new Coordinate()
+                                                                                                         {
+                                                                                                             X = 3,
+                                                                                                             Y = 3
+                                                                                                         },
+                                                                                                     enemyUnitDefault
+                                                                                                 } 
                                                                                          },
                                                                         AllySpotCoordinates = new List<Coordinate>()
                                                                                                   {

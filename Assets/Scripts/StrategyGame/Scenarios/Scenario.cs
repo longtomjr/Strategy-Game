@@ -54,7 +54,7 @@ namespace StrategyGame.Scenarios
         /// <summary>
         /// Gets or sets the other units.
         /// </summary>
-        public List<Unit> OtherUnits { get; set; }
+        public Dictionary<Coordinate, Unit> OtherUnits { get; set; }
 
         /// <summary>
         /// Gets or sets the coordinates for the ally spot.
