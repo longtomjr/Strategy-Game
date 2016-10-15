@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="SpaceKrakens" file="Tile.cs">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
@@ -60,6 +60,10 @@ namespace StrategyGame.World
         /// </summary>
         public int HealthImpact { get; internal set; }
 
+        public int X { get; internal set; }
+
+        public int Y { get; internal set; }
+
         /// <summary>
         /// Gets the positive or negative impact standing on this tile while defending or attacking has on the unit's evasion.
         /// </summary>
@@ -79,6 +83,12 @@ namespace StrategyGame.World
         /// Gets the function to determine <see cref="Enterability"/>, should this tile's Enterability be <see cref="Enterability.Maybe"/>.
         /// </summary>
         public Func<Unit, Enterability> IsEnterable { get; internal set; }
+
+        public Tile()
+        {
+
+        }
+
 
         /// <summary>
         /// Gets or sets the occupying unit.

@@ -14,6 +14,8 @@ namespace StrategyGame.Controllers
 {
     using System.Collections.Generic;
 
+    using StrategyGame.Controllers.Sprites;
+
     using StrategyGame.World;
 
     /// <summary>
@@ -53,24 +55,9 @@ namespace StrategyGame.Controllers
 
             Map debugMap = Debug.TestNumberOne.InitialiseGameState();
 
-            GameObject go = new GameObject();
-            go.transform.SetParent(this.transform);
-            go.name = "Map";
+            new TileSpriteController(debugMap);
 
-            for (int i = 0; i < debugMap.Tiles.GetLength(0); i++)
-            {
-                for (int j = 0; j < debugMap.Tiles.GetLength(1); j++)
-                {
-                    GameObject tileGameObject = new GameObject();
-                    tileGameObject.transform.SetParent(go.transform);
-                    tileGameObject.transform.position = new Vector3(j, i);
-                    tileGameObject.name = $"Tile [{i} : {j}]";
-                    tileGameObjectDictionary.Add(debugMap.Tiles[i, j], tileGameObject);
-                    debugMap.Tiles[i, j].Changed += this.TileChanged;
-                }
-            }
-        }
-
+        } 
         /// <summary>
         /// The tile changed callback. It gets called, whenever a tile gets changed.
         /// </summary>

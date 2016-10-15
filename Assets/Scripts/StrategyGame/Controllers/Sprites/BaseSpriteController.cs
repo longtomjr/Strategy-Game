@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="BaseSpriteController.cs" company="SpaceKrakens">   
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
@@ -54,12 +54,12 @@ namespace StrategyGame.Controllers.Sprites
         /// The "created" callback. It gets called, whenever something gets created.
         /// </summary>
         /// <param name="obj">The thing that got created.</param>
-        protected abstract void Created(T obj);
+        protected abstract void OnCreated(T obj);
 
         /// <summary>
         /// The "changed" callback. It gets called, whenever something gets changed.
         /// </summary>
         /// <param name="obj">The thing that got changed.</param>
-        protected abstract void Changed(T obj);
+        protected abstract void OnChanged(T obj);
     }
 }

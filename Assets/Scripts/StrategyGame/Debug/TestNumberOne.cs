@@ -91,7 +91,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 0,
+                                                X = 0
                                             },
                                         new Tile
                                             {
@@ -100,7 +102,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 0,
+                                                X = 1
                                             },
                                         new Tile
                                             {
@@ -109,7 +113,10 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 0,
+                                                X = 2
+
                                             },
                                         new Tile
                                             {
@@ -118,7 +125,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 0,
+                                                X = 3
                                             },
                                         new Tile
                                             {
@@ -127,7 +136,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 0,
+                                                X = 4
                                             }
                                     },
                                     {
@@ -138,7 +149,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 1,
+                                                X = 0
                                             },
                                         new Tile
                                             {
@@ -147,7 +160,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 1,
+                                                X = 1
                                             },
                                         new Tile
                                             {
@@ -156,7 +171,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 1,
+                                                X = 2
                                             },
                                         new Tile
                                             {
@@ -165,7 +182,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 1,
+                                                X = 3
                                             },
                                         new Tile
                                             {
@@ -174,7 +193,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 1,
+                                                X = 4
                                             }
                                     },
                                     {
@@ -185,7 +206,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 2,
+                                                X = 0
                                             },
                                         new Tile
                                             {
@@ -194,7 +217,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 2,
+                                                X = 1
                                             },
                                         new Tile
                                             {
@@ -203,7 +228,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 2,
+                                                X = 2
                                             },
                                         new Tile
                                             {
@@ -212,7 +239,10 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 2,
+                                                X = 3
+
                                             },
                                         new Tile
                                             {
@@ -221,7 +251,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 2,
+                                                X = 4
                                             }
                                     },
                                     {
@@ -232,7 +264,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 3,
+                                                X = 0
                                             },
                                         new Tile
                                             {
@@ -241,7 +275,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 3,
+                                                X = 1
                                             },
                                         new Tile
                                             {
@@ -250,7 +286,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 3,
+                                                X = 2
                                             },
                                         new Tile
                                             {
@@ -259,7 +297,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 3,
+                                                X = 3
                                             },
                                         new Tile
                                             {
@@ -268,7 +308,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 3,
+                                                X = 4
                                             }
                                     },
                                     {
@@ -279,7 +321,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 4,
+                                                X = 0
                                             },
                                         new Tile
                                             {
@@ -288,7 +332,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 4,
+                                                X = 1
                                             },
                                         new Tile
                                             {
@@ -297,7 +343,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 4,
+                                                X = 2
                                             },
                                         new Tile
                                             {
@@ -306,7 +354,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 4,
+                                                X = 3
                                             },
                                         new Tile
                                             {
@@ -315,7 +365,9 @@ namespace StrategyGame.Debug
                                                 HealthImpact = 0,
                                                 IsEnterable = (unit) => Enterability.Yes,
                                                 MovementPenalty = (unit) => 0,
-                                                TileType = "Dirt"
+                                                TileType = "Dirt",
+                                                Y = 4,
+                                                X = 4
                                             }
                                     }
                             },
