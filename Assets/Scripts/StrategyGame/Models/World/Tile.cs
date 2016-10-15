@@ -93,8 +93,9 @@ namespace StrategyGame.World
             set
             {
                 this.occupyingUnit = value;
-                this.Changed?.Invoke(this);
                 value.CurrentTile = this;
+
+                this.Changed?.Invoke(this);
             }
         }
     }
