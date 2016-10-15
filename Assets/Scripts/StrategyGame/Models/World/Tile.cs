@@ -46,6 +46,11 @@ namespace StrategyGame.World
         private Unit occupyingUnit;
 
         /// <summary>
+        /// The changed.
+        /// </summary>
+        public event Action<Tile> Changed;
+
+        /// <summary>
         /// Gets the tile type.
         /// </summary>
         public string TileType { get; internal set; }
@@ -88,6 +93,7 @@ namespace StrategyGame.World
             set
             {
                 this.occupyingUnit = value;
+                this.Changed?.Invoke(this);
                 value.CurrentTile = this;
             }
         }
